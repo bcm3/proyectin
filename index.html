@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="script" href="/script/script.js">
+
+    <style>
+    .some{
+        display: inline-block;
+    }
+    
+    
+    </style>
+
+</head>
+
+<body onLoad="cargar()">
+    <header>
+        <div class="container">
+            <h3>Crear Usuario</h3>
+            <p onclick="">Cancelar</p>
+            <div class="row">
+                <div class="cajaPaso col-md-3">1. Paso 1</div>&nbsp;
+                <div class="cajaPaso col-md-3">2. Paso 2</div>&nbsp;
+                <div class="cajaPaso col-md-3">3. Paso 3</div>&nbsp;
+                <div class="cajaPaso col-md-2">FIN</div>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="container">
+            <div class="row">
+                <h3 class="col-md-12">Asignar Proyecto</h3>
+            </div>
+            <div class="col-md-8">
+                <table class="table table-bordered">
+                        <tr>
+                            <th>Proyecto</th>
+                            <th>Asignado a ....</th>
+                        </tr>
+                    <tbody id="datos">
+                        <tr>
+
+                        </tr>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Proyectos Asignados</th>
+                            </tr>
+                        </thead>
+                        <tbody id="elementos">
+                            <tr>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="recurda">
+                    <strong class="fuerte">Recuerda que ....</strong>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+                <div class="col-md-3">
+                        <button type="button" class="btn btn-info">Volver</button>
+                </div>
+            <div class="col-md-3">
+                    <button type="button" class="btn btn-danger">Guardar y cerrar</button>
+            </div>
+            <div class="col-md-3">
+                    <button type="button" id="boton4" onclick="ir(i)" class="btn btn-primary" value="Añadir"> Enviar </button>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+
+let i=0;
+let proyecto;  
+
+let datos={
+    "proyectos": [
+        {titulo:"Proyecto 1", asignado: "Pepe Perez, Jose Fernandez, Andrea Medio, Jose Luis Fernandez \n"},
+        {titulo:"Proyecto 2", asignado: "Pepe Perez, Jose Fernandez \n"},
+        {titulo:"Proyecto 3", asignado: "Pepe Perez, Jose Fernandez,, Jose Luis Fernandez \n"},
+    ]
+};
+
+let proyectosAsignados=[]
+
+function cargar(){
+    for(let i=0; i<datos.proyectos.length; i++){
+        $("#datos tr").append('<th> <input type="checkbox" id="micheck(i)" />'+ datos.proyectos[i].titulo +' \n <br> </th>');
+        
+        $("#datos tr").append('<th> ' + datos.proyectos[i].asignado + ' <br> </th>');
+    }
+}
+
+ function ir(i){
+
+       //if($('input[type=checkbox]').prop('checked')){
+        //   alert("pulsado")
+            $('#boton4').on('click', function(){
+                $("#datos").detach(i).appendTo('#elementos');
+            });
+
+            //console.log("V",i)
+        
+}
+
+</script>
+
+</html>

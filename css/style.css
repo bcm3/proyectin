@@ -1,0 +1,27 @@
+.cajaPaso{
+    background: #D2D2D2;
+    width: 30px;
+    height: 60px;
+    padding-top: 10px;
+    font-weight: bold;
+}
+
+.cajaPaso:last-child{
+    text-align: center;
+    line-height: 40px;
+}
+
+.section{
+    margin-top: 40px;
+}
+
+
+.recurda{
+    border: solid 2px yellow;
+    padding: 10px 10px 30px 10px;
+    background: #ECF37E;
+}
+
+.fuerte{
+    color: orangered;
+}
