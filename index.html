@@ -61,8 +61,6 @@
                             </tr>
                         </thead>
                         <tbody id="elementos">
-                            <tr>
-                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -95,8 +93,8 @@
 </body>
 <script>
 
-    let i=0;
-    
+    let i;
+
     let datos = {
         "proyectos": [{
                 titulo: "Proyecto 1",
@@ -113,15 +111,38 @@
         ]
     };
 
+    let proyectosAsignados=[];
+
     function cargar() {
         for (let i = 0; i < datos.proyectos.length; i++) {
-            $("#datos").append('<tr> <td> <input type="checkbox" onclick="ck(i)"/>' + datos.proyectos[i].titulo + '</td> <td>' +  datos.proyectos[i].asignado  +' </td> </tr>' );
+            $("#datos").append('<tr> <td> <input type="checkbox" id="cb" onclick="ck(this)" />' + datos.proyectos[i].titulo + '</td> <td>' +  datos.proyectos[i].asignado  +' </td> </tr>' );
         }
     }
 
-    function ck(i){
-        console.log("estamos dentro");
+    function cargarAsingador() {
+        for (let i = 0; i < proyectosAsignados.length; i++) {
+            $("#elementos").append('<tr> <td> ' + proyectosAsignados[i].titulo + '</td> <td>' +  proyectosAsignados[i].asignado  +' </td> </tr>' );
+        }
     }
+
+    function ck(cb, proyectoSele){
+        if(cb.checked) {
+           // $(this.proyectoSele); aqui tengo que recoger el evento
+            console.log(this.proyectoSele);
+            console.log(cb.checked)
+            //proyectosAsignados.unshift(this.proyectoSele);
+            //datos.proyectos.splice(this.proyectoSele);
+            
+            
+            //console.log(proyecto[i]);
+            console.log("que hay en datos: ",datos);
+            console.log("que hay en proyectoselected: ", this.proyectoSele);
+            
+         }else if(cb.checked === false) {
+            console.log("NO")   
+        }
+
+    }    
 
     $(document).ready(function () {
         //evento sobre el boton
