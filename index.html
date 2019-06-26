@@ -8,19 +8,15 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <script
-        src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="script" href="/script/script.js">
 
     <style>
-    .some{
-        display: inline-block;
-    }
-    
-    
+        .some {
+            display: inline-block;
+        }
     </style>
 
 </head>
@@ -45,15 +41,13 @@
             </div>
             <div class="col-md-8">
                 <table class="table table-bordered">
+                    <thead>
                         <tr>
                             <th>Proyecto</th>
                             <th>Asignado a ....</th>
                         </tr>
-                    <tbody id="datos">
-                        <tr>
-
-                        </tr>
-                    </tr>
+                    </thead>
+                    <tbody id="datos"></tbody>
                 </table>
             </div>
         </div>
@@ -80,60 +74,62 @@
             <div class="col-md-12">
                 <div class="recurda">
                     <strong class="fuerte">Recuerda que ....</strong>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 </div>
             </div>
         </div>
     </div>
     <div class="container">
         <div class="row">
-                <div class="col-md-3">
-                        <button type="button" class="btn btn-info">Volver</button>
-                </div>
             <div class="col-md-3">
-                    <button type="button" class="btn btn-danger">Guardar y cerrar</button>
+                <button type="button" class="btn btn-info">Volver</button>
             </div>
             <div class="col-md-3">
-                    <button type="button" id="boton4" onclick="ir(i)" class="btn btn-primary" value="Añadir"> Enviar </button>
+                <button type="button" class="btn btn-danger">Guardar y cerrar</button>
+            </div>
+            <div class="col-md-3">
+                <button type="button" id="boton4" class="btn btn-primary" value="Añadir"> Enviar </button>
             </div>
         </div>
     </div>
 </body>
 <script>
 
-let i=0;
-let proyecto;  
+    let i=0;
+    
+    let datos = {
+        "proyectos": [{
+                titulo: "Proyecto 1",
+                asignado: "Pepe Perez, Jose Fernandez, Andrea Medio, Jose Luis Fernandez"
+            },
+            {
+                titulo: "Proyecto 2",
+                asignado: "Pepe Perez, Jose Fernandez"
+            },
+            {
+                titulo: "Proyecto 3",
+                asignado: "Pepe Perez, Jose Fernandez, Jose Luis Fernandez"
+            },
+        ]
+    };
 
-let datos={
-    "proyectos": [
-        {titulo:"Proyecto 1", asignado: "Pepe Perez, Jose Fernandez, Andrea Medio, Jose Luis Fernandez \n"},
-        {titulo:"Proyecto 2", asignado: "Pepe Perez, Jose Fernandez \n"},
-        {titulo:"Proyecto 3", asignado: "Pepe Perez, Jose Fernandez,, Jose Luis Fernandez \n"},
-    ]
-};
-
-let proyectosAsignados=[]
-
-function cargar(){
-    for(let i=0; i<datos.proyectos.length; i++){
-        $("#datos tr").append('<th> <input type="checkbox" id="micheck(i)" />'+ datos.proyectos[i].titulo +' \n <br> </th>');
-        
-        $("#datos tr").append('<th> ' + datos.proyectos[i].asignado + ' <br> </th>');
+    function cargar() {
+        for (let i = 0; i < datos.proyectos.length; i++) {
+            $("#datos").append('<tr> <td> <input type="checkbox" onclick="ck(i)"/>' + datos.proyectos[i].titulo + '</td> <td>' +  datos.proyectos[i].asignado  +' </td> </tr>' );
+        }
     }
-}
 
- function ir(i){
+    function ck(i){
+        console.log("estamos dentro");
+    }
 
-       //if($('input[type=checkbox]').prop('checked')){
-        //   alert("pulsado")
-            $('#boton4').on('click', function(){
-                $("#datos").detach(i).appendTo('#elementos');
-            });
+    $(document).ready(function () {
+        //evento sobre el boton
+        $('#boton4').on('click', function () {
+            $("#datos").detach().appendTo('#elementos');
+        });
 
-            //console.log("V",i)
-        
-}
-
+    });
 </script>
 
 </html>
