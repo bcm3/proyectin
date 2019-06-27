@@ -130,8 +130,8 @@
 
     function cargar() {
         for (let i = 0; i < datos.proyectos.length; i++) {
-            $("#datos").append('<tr> <td> <input type="checkbox" value="' + datos.proyectos[i].titulo +
-                '" id="cb" onclick="ck(this)" />' + datos.proyectos[i]
+            $("#datos").append('<tr id="ele"> <td> <input type="checkbox" value="' + datos.proyectos[i].titulo +
+                '"id="cb" onclick="ck(this)" />' + datos.proyectos[i]
                 .titulo + '</td> <td>' + datos.proyectos[i].asignado + ' </td> </tr>');
         }
     }
@@ -151,19 +151,20 @@
             // console.log(cb.value);
             // console.log(cb.checked)
             for (let i = 0; i < datos.proyectos.length; i++) {
+               
                 if (datos.proyectos[i].titulo === cb.value) {
+                    
                     // console.log(cb.value);
                     console.log(datos.proyectos[i].titulo)
                     // datos.proyectos.unshift(datos.proyectos[i])
                     // let index = datos.proyectos.indexOf(datos.proyectos[i]);
                     // datos.proyectos.splice(index, 1);
                     // cb.hide();
+                    $('#ele').hide(); 
                     proyectosAsignados.push(datos.proyectos[i])
+                    
                     cargarAsingador()
-                    //cb.hide();
-
-                }
-
+                } 
             }
             console.log(proyectosAsignados)
 
