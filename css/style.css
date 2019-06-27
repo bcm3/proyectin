@@ -1,8 +1,8 @@
 .cajaPaso{
     background: #D2D2D2;
-    width: 30px;
     height: 60px;
     padding-top: 10px;
+    text-align: left;
     font-weight: bold;
 }
 
@@ -11,11 +11,6 @@
     line-height: 40px;
 }
 
-.section{
-    margin-top: 40px;
-}
-
-
 .recurda{
     border: solid 2px yellow;
     padding: 10px 10px 30px 10px;
@@ -23,5 +18,39 @@
 }
 
 .fuerte{
-    color: orangered;
+    color: orange;
+    display: inline;
+}
+
+.espacio{
+    margin-top: 10px;
+}
+
+.cabeceraTabla{
+    background: rgb(211, 205, 205);
+}
+
+li:active{
+    background: #ADD8E6;
+}
+
+.icono{
+    display: block;
+    text-align: center;
+    font-size: 60px;
+    line-height: 500px;
+}
+
+.center{
+    display: inline;
+
+}
+
+.tabla{
+    padding-right: 0px!important;
+}
+
+.interrogante{
+    display: inline;
+    margin-right: 2px;
 }

@@ -12,51 +12,52 @@
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="script" href="/script/script.js">
-
-    <style>
-        .some {
-            display: inline-block;
-        }
-    </style>
-
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
 
 <body onLoad="cargar()">
     <header>
-        <div class="container">
-            <h3>Crear Usuario</h3>
-            <p onclick="">Cancelar</p>
-            <div class="row">
-                <div class="cajaPaso col-md-3">1. Paso 1</div>&nbsp;
-                <div class="cajaPaso col-md-3">2. Paso 2</div>&nbsp;
-                <div class="cajaPaso col-md-3">3. Paso 3</div>&nbsp;
-                <div class="cajaPaso col-md-2">FIN</div>
-            </div>
-        </div>
     </header>
     <section>
+            <div class="container">
+                    <div class="espacio row">
+                      <h3>Crear Usuario</h3>
+                      <p class="offset-9" onclick="">Cancelar</p>
+                    </div>
+                    <div class="row">
+                      <div class="cajaPaso tabla col-sm-3 col-md">1. Paso 1</div>&nbsp;
+                      <div class="cajaPaso tabla col-sm-3 col-md">2. Paso 2</div>&nbsp;
+                      <div class="cajaPaso tabla col-sm-3 col-md">3. Paso 3</div>&nbsp;
+                      <div class="cajaPaso tabla col-sm-3 col-md-2">Fin </div>
+                    </div>
+                  </div>
+                  <div class="container">
+                    <div class="espacio row">
+                      <h3 class="text-center col-md-12">Asignar Proyecto</h3>
+                    </div>
+                  </div>
         <div class="container">
-            <div class="row">
-                <h3 class="col-md-12">Asignar Proyecto</h3>
-            </div>
-            <div class="col-md-8">
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th>Proyecto</th>
-                            <th>Asignado a ....</th>
-                        </tr>
-                    </thead>
-                    <tbody id="datos"></tbody>
-                </table>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <table class="table table-bordered">
+            <div class="espacio row">
+                <div class="col-md-7">
+                    <table class="table border-0">
                         <thead>
-                            <tr>
+                            <tr class="cabeceraTabla">
+                                <th>Proyecto</th>
+                                <th>Asignado a ...</th>
+                            </tr>
+                        </thead>
+                        <tbody id="datos">
+                        </tbody>
+                    </table>
+                </div>
+                <div class="icono">
+                        <i class="fas fa-angle-double-right"></i>
+                </div>
+                <div class="col-md">
+                    <table class="table border-0">
+                        <thead>
+                            <tr class="cabeceraTabla">
                                 <th>Proyectos Asignados</th>
                             </tr>
                         </thead>
@@ -66,83 +67,115 @@
                 </div>
             </div>
         </div>
-    </section>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="recurda">
-                    <strong class="fuerte">Recuerda que ....</strong>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        <div class="container">
+            <div class="row">
+                <div class="tabla col-md-12">
+                    <div class="recurda">
+                        <div class="col-md-2 fuerte">
+                            <div class="interrogante">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <strong>Recuerda que ...</strong>
+                        </div>
+                        <div class="offset-2 center">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3">
-                <button type="button" class="btn btn-info">Volver</button>
-            </div>
-            <div class="col-md-3">
-                <button type="button" class="btn btn-danger">Guardar y cerrar</button>
-            </div>
-            <div class="col-md-3">
-                <button type="button" id="boton4" class="btn btn-primary" value="Añadir"> Enviar </button>
+        <div class="container">
+            <div class="espacio row">
+                <div class="col-sm-1 col-md-1">
+                    <button type="button" class="btn btn-info">Volver</button>
+                </div>
+                <div class="offset-4 col-sm-4 col-md">
+                    <button type="button" class="btn btn-danger">Guardar y cerrar</button>
+                </div>
+                <div class="offset-3 col-md">
+                    <button type="button" class="btn btn-info">Seguir</button>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 </body>
 <script>
-
-    let i;
-
     let datos = {
         "proyectos": [{
                 titulo: "Proyecto 1",
-                asignado: "Pepe Perez, Jose Fernandez, Andrea Medio, Jose Luis Fernandez"
+                asignado: "Pepe Perez, Jose Fernandez, Andrea Medio, Jose Luis Fernandez, Andrea Madio"
             },
             {
                 titulo: "Proyecto 2",
-                asignado: "Pepe Perez, Jose Fernandez"
+                asignado: "Pepe Perez, Andrea Medio, Maria Luisa Calparorro"
             },
             {
                 titulo: "Proyecto 3",
-                asignado: "Pepe Perez, Jose Fernandez, Jose Luis Fernandez"
+                asignado: "Pepe Perez, Andrea Medio"
             },
+            {
+                titulo: "Proyecto 4",
+                asignado: "Jose Fernandez"
+            },
+            {
+                titulo: "Proyecto 5",
+                asignado: "Andrea Medio, Pepe Perez, Jose Fernandez"
+            },
+            {
+                titulo: "Proyecto 6",
+                asignado: "Andrea Medio, Jose Luis Fernandez"
+            }
         ]
     };
 
-    let proyectosAsignados=[];
+    let proyectosAsignados = [];
 
     function cargar() {
         for (let i = 0; i < datos.proyectos.length; i++) {
-            $("#datos").append('<tr> <td> <input type="checkbox" id="cb" onclick="ck(this)" />' + datos.proyectos[i].titulo + '</td> <td>' +  datos.proyectos[i].asignado  +' </td> </tr>' );
+            $("#datos").append('<tr> <td> <input type="checkbox" value="' + datos.proyectos[i].titulo +
+                '" id="cb" onclick="ck(this)" />' + datos.proyectos[i]
+                .titulo + '</td> <td>' + datos.proyectos[i].asignado + ' </td> </tr>');
         }
     }
 
     function cargarAsingador() {
+        /* Función para pintar los datos que tenemos en el array  de elementos */
+        $("#elementos").empty(); //cada vez que entro elimino todo y cominezo a pintar lo que hay en el array con ese nuevo elemento
         for (let i = 0; i < proyectosAsignados.length; i++) {
-            $("#elementos").append('<tr> <td> ' + proyectosAsignados[i].titulo + '</td> <td>' +  proyectosAsignados[i].asignado  +' </td> </tr>' );
+            $("#elementos").append('<tr> <td> ' + proyectosAsignados[i].titulo + '</td> <td>' + proyectosAsignados[i]
+                .asignado + ' </td> </tr>');
         }
     }
 
-    function ck(cb, proyectoSele){
-        if(cb.checked) {
-           // $(this.proyectoSele); aqui tengo que recoger el evento
-            console.log(this.proyectoSele);
-            console.log(cb.checked)
-            //proyectosAsignados.unshift(this.proyectoSele);
-            //datos.proyectos.splice(this.proyectoSele);
-            
-            
+    function ck(cb) {
+        if (cb.checked) {
+            //    let project =  $(this.proyectoSele)
+            // console.log(cb.value);
+            // console.log(cb.checked)
+            for (let i = 0; i < datos.proyectos.length; i++) {
+                if (datos.proyectos[i].titulo === cb.value) {
+                    // console.log(cb.value);
+                    console.log(datos.proyectos[i].titulo)
+                    // datos.proyectos.unshift(datos.proyectos[i])
+                    // let index = datos.proyectos.indexOf(datos.proyectos[i]);
+                    // datos.proyectos.splice(index, 1);
+                    // cb.hide();
+                    proyectosAsignados.push(datos.proyectos[i])
+                    cargarAsingador()
+                    //cb.hide();
+
+                }
+
+            }
+            console.log(proyectosAsignados)
+
             //console.log(proyecto[i]);
-            console.log("que hay en datos: ",datos);
-            console.log("que hay en proyectoselected: ", this.proyectoSele);
-            
-         }else if(cb.checked === false) {
-            console.log("NO")   
+            // console.log("que hay en datos: ", datos);
+            // console.log("que hay en proyectoselected: ", this.proyectoSele);
+
+        } else if (cb.checked === false) {
+            console.log("NO")
         }
 
-    }    
+    }
 
     $(document).ready(function () {
         //evento sobre el boton
